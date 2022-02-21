@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" type="text/css" href="indexstyle.css">
+<title>実験</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="controlScript.js"></script>
+    <div class="main-contents">
+      <div class="top-bar"><h2>実験説明</h2></div>
+      <br/>
+      <p class="description">
+        これより参加者には以下の二つのことを行って頂きます．<br/>
+        深く考えずに，リラックスして実験に取り組んでください.<br/><br><br>
+      </p>
+
+      <h4>1.コンビニエンスストアの店員ゲームへの参加</h4>
+      <h4>2.ゲーム参加後のアンケートへの解答</h4>
+      <br/>
+      <p> 次のページからゲームの説明が始まります．次へ進むボタンを押してください．</p>
+    <br/><br/>
+      <button id="next_page" type="button" class="next-btn" >次へ進む 　〉〉</button>
+      <script type="text/javascript">
+        var param = location.search;
+        var target = document.getElementById('next_page');
+        target.onclick =
+        function(){
+          location.href='./description2.html'+ param;
+        }
+
+
+      </script>
+      <br/><br/>
+
+      <footer>
+        <b style="text-align: center;"> 《　3 / 11 　》 </b>
+      </footer>
+
+    </div>
+  </body>
+</html>

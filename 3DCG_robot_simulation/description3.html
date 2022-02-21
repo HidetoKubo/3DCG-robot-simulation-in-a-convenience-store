@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="indexstyle.css">
+  <title>実験</title>
+
+</head>
+
+<body>
+  <script type="text/javascript" src="controlScript.js"></script>
+  <div class="main-contents">
+    <div class="top-bar">
+      <h2>音量調節とゲーム内容の確認</h2>
+    </div>
+    <br />
+    <p>ゲームを開始する前に音量調節と，ゲームの内容に関する動画を視聴して頂きます．<br/>
+      以下の手順で進めてください．</p>
+    <ol>
+      <li>「音量確認開始」ボタンをクリックし，パソコンの音量調節を行ってください．</li>
+      <li>音量確認後に画面内に表示される「動画再生」ボタンをクリックし，<span style="font-weight: bold;">実際のゲームと同じ内容の動画を店員になったつもり</span>で視聴してください．
+          全部で<span style="font-weight: bold;" >4パターンあり，すべて連続で再生</span>されます．</li>
+      <li>繰り返し確認したい場合は，「もう一度再生」ボタンから何度でも動画を再生できます．</li>
+      <li>音量調節とゲーム内容を確認できたら，次に進むボタンから次に進んでください．</li>
+    </ol>
+    <p style="font-weight: bold;">動画内で問いかけがありますので，あなたならどうするのか，それぞれのパターンごとに検討してください．次のページ以降で回答して頂きます．</p>
+    <p>動画の読み込みに時間がかかる場合があります．画像が表示されるまでお待ちください．</p>
+    <br />
+
+
+    <input type="button" id="volumeTestButton" value="音量確認開始" style="display: inline;" onclick="volumeTestStart();">
+    <input type="button" id="practiceButton" value="動画開始" style="display: none;" onclick="practiceStart();">
+
+    <div class="videoContents">
+      <div id="volumeTestMessage" style="display: none;">
+        <p id="volumeText">ただいま流れている音声が聞き取れるように音量を調節してください<br>
+          <span id="vtm2" style="display: none; width: 400px;" >音量の調節が終わりましたら，音声の途中でも構いませんので「動画<br>開始」ボタンをクリックし動画を再生てください</span></p>
+      </div>
+      <div id="practiceEndMessage" style="display: none;">
+        <p>以上でゲーム内容の確認は終了です.「次へ進む」より次に進んでください.<br>
+          もう一度動画を視聴したい場合は「もう一度再生」ボタンを押してください．</p>
+      </div>
+
+      <img id="brackBackground" src="./Img/videoBackground.jpg" style="display: block;">
+      <audio src="./sound/soundCheck.mp3" id="sampleVoice"></audio>
+      <video src="./movie/videoP.mp4" height="100%" width="100%" id="videoPractice" preload="auto"
+        style="display: none"></video>
+    </div>
+
+<!--
+    <p id="finalCheckBoxs" style="display: none;">
+      最後ににもう一度ゲームの内容についての確認を行います．<br />
+      以下の説明をよく読み，チェックボックスにチェックしてください．<br /><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox1" type="checkbox" name="" value="" required>
+        あなたにはコンビニエンスストアの店員としてレジでの対応をしていただきます．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox2" type="checkbox" name="" value="" required>
+        来店したロボットに対して，商品を「販売する」もしくは「販売しない」を選択してください．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox3" type="checkbox" name="" value="" required>
+        選択はあなたの常識的な判断で，自由に行ってもらってかまいません．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox4" type="checkbox" name="" value="" required>
+        ゲームは全部で4回です．ゲーム毎にアンケートへ回答してください．</label><br />
+      <br /><br />
+      チェックボックスを全てチェックし終えたら，「次へ進む」ボタンを押してください．
+      再度このページへ戻ることはできません．
+    </p>
+-->
+<!--
+    <br /><br />
+    <label><input id="checkbox" type="checkbox" name="" value="" required>音量調節を行い，ゲーム内容を理解できた．</label>
+ -->
+  <p id="endMovieMessage" style="display: none;">次へ進む場合は，動画再生中でも構いませんので次に進むボタンからお進みください．</p>
+ <br /><br />
+
+
+    <button type="button" id="nextbtn" style="opacity: 0.25;" value="" class="next-btn" onclick="check()">次へ進む
+      　〉〉</button>
+    <br /><br />
+    <footer>
+      <b style="text-align: center;"> 《　5 / 11 　》 </b>
+    </footer>
+    <ul class="licence">
+      <li>
+        <img class="cc_by" alt="Creative Commons License" border="0" src="Img/sound.png" /><br />
+        <p>HTS Voice "Mei(Normal)" Copyright (c) 2009-2013 Nagoya Institute of Technology</p>
+      </li>
+      <li>
+        <!--SIL Open Font License-->
+        <a rel="license" href="https://scripts.sil.org/OFL"><img alt="Open Font License" border="0"
+            src="Img/OFL_logo.png" /></a><br /><br><br>
+        <a rel="license" href="https://scripts.sil.org/OFL">Open Font License </a>
+      </li>
+      <!--/SIL Open Font License-->
+    </ul>
+  </div>
+
+
+
+  <script type="text/javascript">
+    var param = location.search;
+
+    const cbox1 = document.getElementById('checkbox1');
+    const cbox2 = document.getElementById('checkbox2');
+    const cbox3 = document.getElementById('checkbox3');
+    const cbox4 = document.getElementById('checkbox4');
+    const target = document.getElementById('nextbtn');
+    var flag = false;
+    var alertMessage;
+    alertMessage = "音量確認を行い，動画を最後まで視聴してください"
+    function check() {
+      if (flag) {
+        location.href = "./description4.html" + param
+      } else {
+        alert(alertMessage);
+
+      }
+    }
+    function nextbtnChange() {
+      if (cbox1.checked && cbox2.checked && cbox3.checked && cbox4.checked) {
+        flag = true;
+        target.style.opacity = 1.0;
+      }
+      else {
+        flag = false;
+        target.style.opacity = 0.25;
+      }
+    }
+    $(cbox1).change(function () {
+      nextbtnChange();
+    });
+    $(cbox2).change(function () {
+      nextbtnChange();
+    });
+    $(cbox3).change(function () {
+      nextbtnChange();
+    });
+    $(cbox4).change(function () {
+      nextbtnChange();
+    });
+
+
+
+  </script>
+  <script src="description3Control.js"></script>
+</body>
+
+</html>

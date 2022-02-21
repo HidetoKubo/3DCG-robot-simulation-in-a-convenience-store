@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="indexstyle.css">
+  <title>実験</title>
+  
+</head>
+
+<body>
+  <script type="text/javascript" src="controlScript.js"></script>
+  <div class="main-contents">
+    <div class="top-bar">
+      <h2>最終確認</h2>
+    </div>
+    <br />
+    <p>
+
+      次のページから実際にゲームを行っていただきます．<br /><br />
+      ゲームを始める前にもう一度ゲームの内容についての確認を行います．<br />
+      以下の説明をよく読み，内容を確認したらチェックボックスにチェックしてください．<br /><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox1" type="checkbox" name="" value="" required>
+        あなたにはコンビニエンスストアの店員としてレジでの対応をしていただきます．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox2" type="checkbox" name="" value="" required>
+        来店したロボットに対して，商品を「販売する」もしくは「販売しない」を選択してください．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox3" type="checkbox" name="" value="" required>
+        選択は商品の特性を踏まえて，常識的な判断で行ってください．</label><br /><br />
+      <label style="font-weight: bold;"><input id="checkbox4" type="checkbox" name="" value="" required>
+        ゲームは全部で4回です．ゲーム毎にアンケートへ回答してください．</label><br />
+      <br /><br />
+      チェックボックスを全てチェックし終えたら，「次へ進む」ボタンを押してください．
+      再度このページへ戻ることはできません．
+    </p>
+
+    <br /><br />
+    <button id="next_page" type="button" style="opacity: 0.25;" class="next-btn">次へ進む 　〉〉</button>
+
+
+    <br /><br />
+    <footer>
+      <b style="text-align: center;"> 《　6 / 11 　》 </b>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+    var param = location.search;
+    const cbox1 = document.getElementById('checkbox1');
+    const cbox2 = document.getElementById('checkbox2');
+    const cbox3 = document.getElementById('checkbox3');
+    const cbox4 = document.getElementById('checkbox4');
+    const target = document.getElementById('next_page');
+    var alertMessage;
+    alertMessage = "すべてのチェックボックスにチェックしてください．"
+
+    function nextbtnChange() {
+      if (cbox1.checked && cbox2.checked && cbox3.checked && cbox4.checked) {
+        target.style.opacity = 1.0;
+      }
+      else {
+        target.style.opacity = 0.25;
+      }
+    }
+    $(cbox1).change(function () {
+      nextbtnChange();
+    });
+    $(cbox2).change(function () {
+      nextbtnChange();
+    });
+    $(cbox3).change(function () {
+      nextbtnChange();
+    });
+    $(cbox4).change(function () {
+      nextbtnChange();
+    });
+    function check() {
+      if (cbox1.checked && cbox2.checked && cbox3.checked && cbox4.checked) {
+        return true;
+      } else {
+        alert(alertMessage);
+        return false;
+      }
+    }
+    target.onclick =
+      function () {
+ if (check()) {
+              location.href = "./game1.html" + param;
+        }
+      }
+
+      
+  </script>
+
+</body>
+
+</html>

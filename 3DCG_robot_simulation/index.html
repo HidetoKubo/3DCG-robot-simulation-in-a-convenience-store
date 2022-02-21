@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="indexstyle.css">
+    <title>実験</title>
+
+  </head>
+  <body>
+    <script type="text/javascript" src="controlScript.js"></script>
+    <div class="main-contents">
+      <div class="top-bar"><h2>実験ページへようこそ</h2></div>
+
+      <br>
+      <p>次のページから実験の説明が始まります.</p>
+      <p>前のページには戻れません，説明をよく読み，次へ進むボタンを押してください．</p>
+      <p>これより先に進む場合，ブラウザの戻る，更新ボタンは押さないでください．</p>
+    <br>
+
+
+      <button id ="next_page" type="button" class="next-btn" onclick="">次へ進む 　〉〉</button>
+      <script type="text/javascript">
+      var S="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      var N=16
+      var idStr = Array.from(crypto.getRandomValues(new Uint8Array(N))).map((n)=>S[n%S.length]).join('')
+      //console.log(s)
+        var param  = "?" +  Date.now() + "&" + idStr;
+        var target = document.getElementById('next_page');
+        target.onclick =
+        function(){
+            location.href='./agreement.html'+ param;
+
+        }
+
+        
+      </script>
+      <br><br>
+      <footer>
+        <b style="text-align: center;"> 《　1 / 11 　》 </b>
+      </footer>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <link rel="stylesheet" type="text/css" href="indexstyle.css">
+  <title>実験</title>
+</head>
+
+<body>
+  <script type="text/javascript" src="controlScript.js"></script>
+  <div class="main-contents">
+    <div class="top-bar">
+      <h2>コンビニエンスストアの店員ゲームの説明</h2>
+    </div>
+    <br />
+    <p>今から行っていただくゲームの説明をします．<br />
+      以下の説明をよく読み，ゲームの練習に参加してください．<br /><br /><br />
+      あなたの役割は，コンビニエンスストアでのレジ対応です．<br>
+      ゲームではロボットが来店し，商品を購入しようとします．<br/>
+      <b>あなたはロボットに商品を「販売する」もしくは「販売しない」を選択してください．</b><br/>
+      <b>選択は商品の特性を踏まえて，常識的な判断で行ってください．</b><br />
+      ゲームは全部で4種類あります．各ゲームで表示される行動の選択肢から１つを選んでください．<br />
+      またゲーム毎に1回ずつアンケートに答えていただきます．<br /><br /><br />
+      以上の内容を把握したら，次へ進むボタンを押してください．
+    </p>
+
+    <br /><br />
+    <button id="next_page" type="button" class="next-btn">次へ進む 〉〉</button>
+    <script type="text/javascript">
+      var param = location.search;
+      var target = document.getElementById('next_page');
+      target.onclick = function () {
+        location.href = './description3.html' + param;
+      }
+
+
+    </script>
+    <br /><br />
+
+    <footer>
+      <b style="text-align: center;"> 《　4 / 11 　》 </b>
+    </footer>
+
+  </div>
+</body>
+
+</html>
