@@ -1,4 +1,6 @@
 # 3DCG_robot_simulation
+
+# 概要
 ロボットがコンビニに来店した場合の3DCGシュミレーション実験 (Unity)
 ゼミで使用した実験サイトです。
 
@@ -11,6 +13,10 @@ https://infallible-davinci-ac1d61.netlify.app/agreement.html?1637916841586&foQJJ
 
 # デモ動画
 https://user-images.githubusercontent.com/98790632/155004715-dd02c2bc-b949-4acd-aed9-0d68a5b305fa.mp4
+
+# 担当部分 紹介動画
+
+# 製作物 一覧
 
 # 使用技術、サービス
 HTML, CSS, JavaScript, Blender, Unity, Google Form, Netlify
