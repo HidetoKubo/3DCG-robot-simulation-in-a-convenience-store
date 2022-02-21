@@ -6,5 +6,7 @@
 
 静的WEBサイトホスティングサービスNetlifyを用いて，公開しております．
 
-
+# デモ動画
 https://user-images.githubusercontent.com/98790632/155004715-dd02c2bc-b949-4acd-aed9-0d68a5b305fa.mp4
+
+# 使用した技術、サービス
